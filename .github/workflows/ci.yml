@@ -52,6 +52,11 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Install Playwright browsers
+        run: |
+          source venv/bin/activate
+          python -m playwright install --with-deps
+
       - name: Run tests
         run: |
           source venv/bin/activate
